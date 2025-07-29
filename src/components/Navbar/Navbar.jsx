@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import {counterContext} from '../Context/CounterContext'
 
 export default function Navbar() {
     return <>

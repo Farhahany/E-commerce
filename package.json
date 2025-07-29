@@ -1,7 +1,7 @@
 {
-  "homepage": "https://Farhahany.github.io/E-commerce",
+  "homepage": "https://Farhahany.github.io/",
   "name": "E-commerce",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {

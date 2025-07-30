@@ -11,7 +11,7 @@ export default function Layout() {
   }, [])
   return <>
     <Navbar />
-    <div className='container pt-16 m-auto'>
+    <div className='container mx-auto max-w-7xl pt-9'>
       <Outlet />
     </div>
     <Footer />

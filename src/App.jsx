@@ -9,6 +9,9 @@ import Home from './components/Home/Home.jsx'
 import Products from './components/Products/Products.jsx';
 import CounterContextProvider from './components/Context/CounterContext.jsx';
 import UserContextProvider from './components/Context/UserContext.jsx';
+import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
+import Categories from './components/Categories/Categories.jsx';
+import SubCategories from './components/SubCategories/SubCategories.jsx';
 import ProtectRoute from './components/ProtectRoute/ProtectRoute.jsx'
 import CartContextProvider from './components/Context/CartContext.jsx';
 
@@ -21,8 +24,12 @@ let route = createBrowserRouter([
       // {path:'/cart', element:<cart/>}
       { path: '/register', element: <Registration /> },
       { path: '/login', element: <Login /> },
+      {path: '/productdetails/:productID', element: <ProductDetails/>},
+      {path: '/Categories', element: <Categories/>},
+      {path: '/SubCategories/:CatID', element: <SubCategories/>},
       // {path:'*', element:<Notfound/>},
-      { path: '*', element: <Notfound /> }
+      {path: '*', element: <Notfound /> }
+
     ]
   }
 ])

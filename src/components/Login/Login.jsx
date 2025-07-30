@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import style from './Login.module.css'
 import { useFormik } from 'formik'
 import axios from 'axios'
 import * as yup from 'yup'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { UserContext } from '../Context/UserContext'
 
 
 export default function Login() {
+  let { setuserLogin } = useContext(UserContext)
   const [errMsg, seterrMsg] = useState(null);
   const [isloading, setisloading] = useState(false);
 
@@ -19,6 +21,7 @@ export default function Login() {
         setisloading(false)
         console.log(res.data.token);
         if (res.data.message === 'success') {
+          setuserLogin(res.data.token)
           localStorage.setItem('usertoken', res.data.token);
           navigate('/');
         }
@@ -90,7 +93,7 @@ export default function Login() {
             </div>
             <button
               type="submit"
-              className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-700 transition duration-300"
+              className="w-full bg-pink-400 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition duration-300"
             >{isloading ? <i className='fas fa-spinner fa-spin'></i> : 'Login'}
 
             </button>
@@ -106,9 +109,9 @@ export default function Login() {
           </form>
           <p className="mt-6 text-center text-gray-600">
             Don't have an account?{" "}
-            <a href="#" className="text-blue-500 hover:underline">
+            <NavLink to='/register' className="text-blue-500 hover:underline">
               Sign up
-            </a>
+            </NavLink>
           </p>
         </div>
       </div >

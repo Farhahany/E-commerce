@@ -6,26 +6,35 @@ import Notfound from './components/Notfound/Notfound.jsx'
 import Registration from './components/Registration/Registration.jsx';
 import Login from './components/Login/Login.jsx';
 import Home from './components/Home/Home.jsx'
+import CounterContextProvider from './components/Context/CounterContext.jsx';
+import UserContextProvider from './components/Context/UserContext.jsx';
 
 let route = createBrowserRouter([
-  {path:'', element:<Layout/>, children:[
-    {path:'/', element:<Home/>},
-    // {path:'*', element:<Products/>},
-    {path:'/register', element:<Registration/>},
-    {path:'/login', element:<Login/>},
-    // {path:'*', element:<Notfound/>},
-    {path:'*', element:<Notfound/>}
-  ]}
+  {
+    path: '', element: <Layout />, children: [
+      { path: '/', element: <Home /> },
+      // {path:'*', element:<Products/>},
+      { path: '/register', element: <Registration /> },
+      { path: '/login', element: <Login /> },
+      // {path:'*', element:<Notfound/>},
+      { path: '*', element: <Notfound /> }
+    ]
+  }
 ])
 function App() {
- 
+
 
   return (
     <>
-     <RouterProvider router={route}></RouterProvider>
+      <UserContextProvider>
+        <CounterContextProvider>
+          <RouterProvider router={route}>
+
+          </RouterProvider>
+        </CounterContextProvider>
+      </UserContextProvider>
     </>
   )
 }
 
 export default App
- 

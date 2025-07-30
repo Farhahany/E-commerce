@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { createContext, useState } from "react";
 
-export default function Context() {
-   const[counter, setcounter] = useState(0)
-   useEffect(()=>{
+export let CounterContext = createContext(0)
 
-   },[])
-  return 
-    <>
-      
-    </>
+export default function CounterContextProvider(props){
+  const [counter, setcounter] = useState(0)
+   
+  return <CounterContext.Provider value={{counter, setcounter}}>
+
+{props.children}
+
+  </CounterContext.Provider>
 }

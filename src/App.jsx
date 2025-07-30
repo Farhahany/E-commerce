@@ -8,7 +8,8 @@ import Login from './components/Login/Login.jsx';
 import Home from './components/Home/Home.jsx'
 import CounterContextProvider from './components/Context/CounterContext.jsx';
 import UserContextProvider from './components/Context/UserContext.jsx';
-
+import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
+import Categories from './components/Categories/Categories.jsx';
 let route = createBrowserRouter([
   {
     path: '', element: <Layout />, children: [
@@ -16,8 +17,11 @@ let route = createBrowserRouter([
       // {path:'*', element:<Products/>},
       { path: '/register', element: <Registration /> },
       { path: '/login', element: <Login /> },
+      {path: '/productdetails/:productID', element: <ProductDetails/>},
+      {path: '/Categories', element: <Categories/>},
       // {path:'*', element:<Notfound/>},
-      { path: '*', element: <Notfound /> }
+      {path: '*', element: <Notfound /> }
+
     ]
   }
 ])

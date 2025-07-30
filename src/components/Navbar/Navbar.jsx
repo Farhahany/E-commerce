@@ -8,12 +8,13 @@ export default function Navbar() {
     let {userLogin} = useContext(UserContext)
     return <>
         <nav className='bg-slate-300 md:flex md:fixed start-0 top-0 end-0 py-2 px-2'>
-            <div className='container m-auto md:flex justify-between max-w-6xl'>
-                <div className='md:flex md:w-fit justify-between'>
+            <div className='container m-auto md:flex justify-between max-w-6xl items-center'>
+                <div className='md:flex md:w-fit justify-between items-center'>
                     <h1 className='text-xl'><i className='fa fa-cart-shopping text-pink-500 pe-2'></i>Fresh Cart</h1>
                     <ul className="text-center md:flex">
                         {userLogin != null ? <> <li><NavLink className='mx-2 text-slate-700 py-1' to='/'>Home</NavLink></li>
-                            <li><NavLink className='mx-2 text-slate-700 py-1' to='/products'>Products</NavLink></li>
+                            <li><NavLink className='mx-2 text-slate-700 py-1 ' to='/products'>Products</NavLink></li>
+                            <li><NavLink className='mx-2 text-slate-700 py-1' to='/Categories'>Categories</NavLink></li>
                             <li><NavLink className='mx-2 text-slate-700 py-1' to='/brands'>Brands</NavLink></li>
                             <li><NavLink className='mx-2 text-slate-700 py-1' to='/cart'>Cart</NavLink></li></> : null}
                     </ul>

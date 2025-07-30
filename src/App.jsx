@@ -10,6 +10,7 @@ import CounterContextProvider from './components/Context/CounterContext.jsx';
 import UserContextProvider from './components/Context/UserContext.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import Categories from './components/Categories/Categories.jsx';
+import SubCategories from './components/SubCategories/SubCategories.jsx';
 let route = createBrowserRouter([
   {
     path: '', element: <Layout />, children: [
@@ -19,6 +20,7 @@ let route = createBrowserRouter([
       { path: '/login', element: <Login /> },
       {path: '/productdetails/:productID', element: <ProductDetails/>},
       {path: '/Categories', element: <Categories/>},
+      {path: '/SubCategories/:CatID', element: <SubCategories/>},
       // {path:'*', element:<Notfound/>},
       {path: '*', element: <Notfound /> }
 

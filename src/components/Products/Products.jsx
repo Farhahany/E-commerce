@@ -24,7 +24,7 @@ export default function Products() {
       {products?.map((prod)=>{return  <div key={prod.id} className="px-2 w-full md:w-1/3 lg:w-1/4 xl:w-1/6">
       <div className="product">
         <Link to={`productdetails/${prod.id}`}>
-          <img src={prod.imageCover} className='w-100' alt={prod.Title} />
+          <img src={prod.imageCover} className='w-100' alt={prod.title} />
           <span className='text-pink-600'>{prod.category.name}</span>
           <h3 className='text-l font-medium'>{prod.title.split(' ').slice(0,2).join(' ')}</h3>
           <div className='flex justify-between'>

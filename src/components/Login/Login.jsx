@@ -91,6 +91,9 @@ export default function Login() {
                 <span className="text-red-800"> incorrect password </span>
               </div> : null}
             </div>
+            <p className="mt-6 text-gray-600">
+            Forget Password?
+          </p>
             <button
               type="submit"
               className="w-full bg-pink-400 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition duration-300"
